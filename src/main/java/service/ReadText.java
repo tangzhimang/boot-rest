@@ -11,6 +11,7 @@ import com.github.nobodxbodon.zhconverter.简繁转换类.目标;
 public class ReadText {
 	
 	private static String FILE_NAME = "word-v2.txt";
+	private static String FILE_NAME_V3 = "word-v3.txt";
 	
 	private static  String randString;
 	
@@ -19,7 +20,7 @@ public class ReadText {
 	 public static String readTxtFile(String filePath) throws Exception{
 		 	
 	        try {
-	                String encoding="GBK";
+	                String encoding="UTF8";
 	                File file=new File(filePath);
 	                if(file.isFile() && file.exists()){ //判断文件是否存在
 	                    InputStreamReader read = new InputStreamReader(
@@ -90,19 +91,20 @@ public class ReadText {
 //	        System.out.println(file.exists());
 	    }
 	 
-//	 public static void main(String argv[]) throws Exception{
-//		 
-//		 getThreeWordString();
-//		 
-//	    }
+	 public static void main(String argv[]) throws Exception{
+		 
+		 getThreeWordString();
+		 
+	    }
 	 
 	 public static String getThreeWordString() throws Exception {
 		 
 		  ReadText rText = new ReadText();	
 	      String filePath = rText.getFile(FILE_NAME);
 	      String oneString = readTxtFile(filePath);
-	      String twoString = readTxtFile(filePath);
-	      String threeString = readTxtFile(filePath);
+	      String filePath2 = rText.getFile(FILE_NAME_V3);
+	      String twoString = readTxtFile(filePath2);
+	      String threeString = readTxtFile(filePath2);
 	      String str = oneString + "  " + twoString + "  " + threeString;
 	     
 	      String zhongString = com.github.nobodxbodon.zhconverter.简繁转换类.转换(str,目标.简体);
