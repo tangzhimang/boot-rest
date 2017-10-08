@@ -1,9 +1,9 @@
-package controller;
+package wechat.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import model.ThreeWord;
-import service.ReadText;
+import wechat.model.ThreeWord;
+import wechat.service.ReadText;
 
 @RestController
 public class ThreeWordController {

@@ -1,4 +1,4 @@
-package model;
+package wechat.model;
 
 public class ThreeWord extends BaseRestElement {
 	
