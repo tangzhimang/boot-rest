@@ -105,7 +105,7 @@ public class ReadText {
 	      String filePath2 = rText.getFile(FILE_NAME_V3);
 	      String twoString = readTxtFile(filePath2);
 	      String threeString = readTxtFile(filePath2);
-	      String str = oneString + "  " + twoString + "  " + threeString;
+	      String str = oneString + "," + twoString + "," + threeString;
 	     
 	      String zhongString = com.github.nobodxbodon.zhconverter.简繁转换类.转换(str,目标.简体);
 	      System.out.println("转换后的字符串为：" + zhongString);
