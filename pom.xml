@@ -1,5 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	  <modelVersion>4.0.0</modelVersion>
   <groupId>com.chipicho.tzm</groupId>
   <artifactId>boot-rest</artifactId>
   <version>0.0.1-SNAPSHOT</version>
@@ -26,11 +27,12 @@
     </profile>
 </profiles>
 
-   <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.6.RELEASE</version>
-    </parent>
+   <!-- Inherit defaults from Spring Boot -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.1.BUILD-SNAPSHOT</version>
+	</parent>
     
     <dependencies>
     
@@ -71,8 +73,7 @@
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
-			<version>2.9.0</version>
-		</dependency>
+			</dependency>
 		
 			<!-- https://mvnrepository.com/artifact/com.github.nobodxbodon/zhconverter -->
 				<dependency>
@@ -84,8 +85,23 @@
 					<dependency>
 					    <groupId>commons-codec</groupId>
 					    <artifactId>commons-codec</artifactId>
-					    <version>1.9</version>
+					    </dependency>
+					<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+					<dependency>
+					    <groupId>javax.mail</groupId>
+					    <artifactId>mail</artifactId>
+					    <version>1.4.7</version>
 					</dependency>
+					
+					<!-- https://mvnrepository.com/artifact/javax.websocket/javax.websocket-api -->
+					<dependency>
+					    <groupId>javax.websocket</groupId>
+					    <artifactId>javax.websocket-api</artifactId>
+					    <version>1.1</version>
+					    <scope>provided</scope>
+					</dependency>
+					
+					
 		
     </dependencies>
     
@@ -99,19 +115,29 @@
         </plugins>
     </build>
 
-    <repositories>
-        <repository>
-            <id>spring-releases</id>
-            <url>https://repo.spring.io/libs-release</url>
-        </repository>
-    </repositories>
-    
-    <pluginRepositories>
-        <pluginRepository>
-            <id>spring-releases</id>
-            <url>https://repo.spring.io/libs-release</url>
-        </pluginRepository>
-    </pluginRepositories>
+    <!-- Add Spring repositories -->
+	<!-- (you don't need this if you are using a .RELEASE version) -->
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<url>https://repo.spring.io/snapshot</url>
+			<snapshots><enabled>true</enabled></snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<url>https://repo.spring.io/snapshot</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<url>https://repo.spring.io/milestone</url>
+		</pluginRepository>
+	</pluginRepositories>
     
   
 </project>

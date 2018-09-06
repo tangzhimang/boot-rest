@@ -8,7 +8,7 @@ import wechat.service.ReadText;
 @RestController
 public class ThreeWordController {
 	
-	@RequestMapping("/ThreeWord")
+	@RequestMapping("/threeWord")
 		public ThreeWord threeWord() throws Exception {
 			return new ThreeWord(0,"success",ReadText.getThreeWordString());
 		}
